@@ -25,7 +25,7 @@ will aid in keeping our university in great shape while providing a means for ev
 
 ## 2. Competitive Analysis
 
-<Site Comparison Table Image>
+*Site Comparison Table Image
   
 Campus Snapshots will have the ability to upload instant images and videos like our competitors, Instagram and Snapchat. We will use a fluid chat system, implement content monitoring and use a system to block/ban false comments and contents similar to Facebook. Students will also be able to search for events and friends. However, we will add a weather system to alert students of major environmental threats which isn’t an option offered by any of our competitors.
 
@@ -71,7 +71,7 @@ User Stories:
       online admins for help.
 
 
-<Use Case Diagram Image>
+*Use Case Diagram Image
   
   
 ## 5. High-Level Functional Requirements
