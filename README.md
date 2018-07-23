@@ -92,9 +92,3 @@ Schedule risks: Some of the team members are too busy, but other members are try
 Technical risks: None<br>
 Teamwork risks: Lack of communication. Each member will have to review the idea for the project and communicate with each other more. Especially ask questions on things that is unclear for verification and agreement instead of just assuming and spend more time to fix later on.<br>
 Legal/content risks: None<br>
-
-
-
-
-
-
