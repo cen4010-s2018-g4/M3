@@ -34,13 +34,48 @@ Prioritize each requirement/spec with 1, 2, 3. (1-must have; 2 – desired; 3 �
 Reference to your final high-level functional requirements, modify based on Milestone 1. Add or change as you see necessary.<br>
 
 ## 8.	High-level system architecture and database organization<br>
-Modify M1 accordingly, and add the following:<br>
-1)	High level Architecture of the code must be consistent with UML class diagram (see below). <br>
-2)	DB organization: Describe the main database schema/organization (high level), e.g. list main DB tables and items in each DB table<br>
-3)	Media storage: Decide if images and video/audio will be kept in file systems or in DB. Describe any other special data format requirements like for video/audio/GPS etc.<br>
-4)	Search/filter architecture and implementation: what will be the algorithm for search; what DB terms will be searched, how it will be coded and organized in the DB. Similarly, say what DB items will be filtered/sorted<br>
-5)	Your own APIs: Describe and define at high level any major APIs that you will create<br>
-6)	Describe any significant non-trivial algorithm or process (like rating, ranking, automatic prioritizing of items etc.)<br>
+Software products and Tools<br>
+Brackets, Notepad++, Putty, WinSCP, FileZilla, GitHub, etc<br>
+Languages and Systems<br>
+English, HTML, PHP, MySQL, Linux, Windows, MacOS, Mobiles , etc<br>
+APIs<br>
+Calendar, Weather<br>
+PHPMailer<br>
+Supported Browsers<br>
+Chrome, Firefox, Opera, Safari, Microsoft Edge, Internet Explorer<br>
+Frameworks<br>
+HTML, PHP, CSS<br>
+
+DB Organization:<br>
+The database get divide into multiple tables. With the UserID from the User table you can get access to the User_Info, Event, User_Comments, and Security_Answers tables. In addition, from Security_Answers you get data from Security_Questions using the QuestionID and both the Event and User_Comment tables get connected with not only UserID but EventID as well. In other words, as long as you have the UserID, you can get information in all the tables that belong to a specific person. <br>
+List of DB Tables:<br><br>
+User: UserID, UserName,Password, Salt, Role, Status<br>
+User_Info: UserID, FirstName, LastName, NickName, DoB, Gender, Email, Telephone, Major<br><br>
+Event: EventID, UserID, Location, Description, Date/Time, Media, Verify, Path. <br>
+User_Comments: C_ID, UserID, EventID, Comment.<br>
+Security_Answers: UserID, QuestionID, Answers<br>
+Security_Questions: QuestionID, Questions<br>
+
+Media Storage:<br>
+The images and video/audio will be kept in file system. The database only stores the path to the files (Event table).<br>
+Search/filter architecture and implementation:<br>
+The execution of a “select” statement to the database will be used for searching, where the condition for the statement can be any of the element in a collection of  fields used for searching.<br>
+Term will be used for searching:<br>
+Username: a String stored in User table. Once the Username is found, the system will get the UserID and find corresponding Nickname and display the Nickname back to UI.<br>
+Nickname: a String stored in User_Info table. Once the Nickname is found, the system will return and display the Nickname back to UI.
+First Name/Last Name: two Strings stored in User_Info table. Once either one or both First Name Last Name is found, the system will return and display the corresponding Nickname back to UI.<br>
+Event Description (partial also works): a String stored in Event table. Once found, the system will return everything about that event back and display in UI.<br>
+Location: a String stored in Event table. Once found, the system will return every event in that location back and display in UI.
+Term will be filtered/sorted:<br>
+Location: a String stored in Event table. By applying this filter, the system will execute a search on the selected location.<br>
+Date/Time: a DateTime field in Event table, entered by the system when an event is posted, and will be sorted from newest to oldest.<br>
+Verify: a Boolean field in in Event table. By applying this filter, the system will show only events that were verified by Power User.<br>
+Your own APIs:<br>
+We will not create any API of our own.<br>
+Describe any significant non-trivial algorithm or process:<br>
+The order of the event post will be shown in order (newest first):  have to read the event bottom up according to datetime. Before output each post, the Event table (store all of the event post from user) will get descending (DESC) sort by the Date/Time before output to the Home Screen.<br>
+Verifying is the process where power user verify whether a post is legit. In Event table there’s a verify field which all post will be masked as false at first. Then Power User can check the event physically and indicate whether the post is legit. From there the Power User can decide whether the post can stay in the system by click on verified or delete. <br>
+
 
 
 ## 9.	High-Level UML diagrams<br>
@@ -52,10 +87,10 @@ Use data terms and names consistently with Glossary/Data Dictionary.<br>
 
 
 ## 10.	Identify actual key risks for your project at this time<br>
-Identify only actual and specific risks in your current work such as (list those that apply: <br>
-1)	Skills risks (do you have the right skills), <br>
-2)	Schedule risks (can you make it given what you committed and the resources), <br>
-3)	Technical risks (any technical unknowns to solve), <br>
-4)	Teamwork risks (any issues related to teamwork); <br>
-5)	Legal/content risks (can you obtain content/SW you need legally with proper licensing, copyright).<br> 
-Tell us how do you plan to resolve risks? The key is to resolve risks as soon as possible. Categorizing risk as above helps a lot in managing them. Be brief: identify the risk and explain (2-3 lines), list how will you address these issues (2-3 lines)<br>
+Skills risks: Some of the development team members lack the database skills<br>
+Schedule risks: Some of the team members are too busy, but other members are trying to make up for that. We’re trying our best to make it in time.<br>
+Technical risks: None<br>
+Teamwork risks: Lack of communication. Each member will have to review the idea for the project and communicate with each other more. Especially ask questions on things that is unclear for verification and agreement instead of just assuming and spend more time to fix later on.<br>
+Legal/content risks: None<br>
+
+
