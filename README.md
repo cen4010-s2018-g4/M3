@@ -91,4 +91,4 @@ Skills risks: Some of the development team members lack the database skills<br>
 Schedule risks: Some of the team members are too busy, but other members are trying to make up for that. We’re trying our best to make it in time.<br>
 Technical risks: None<br>
 Teamwork risks: Lack of communication. Each member will have to review the idea for the project and communicate with each other more. Especially ask questions on things that is unclear for verification and agreement instead of just assuming and spend more time to fix later on.<br>
-Legal/content risks: None<br>
+
