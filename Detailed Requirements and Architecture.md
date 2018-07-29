@@ -141,15 +141,56 @@ APIs: Calendar, Weather<br>
 Supported Browsers: Chrome, Firefox, Opera, Safari, Microsoft Edge, Internet Explorer<br>
 Frameworks: HTML, PHP, CSS<br>
 
-Database Organization<br>
 
-*Add new information based on M3 instructions
+## 8 Database Organization
+
+Software products and Tools<br>
+Brackets, Notepad++, Putty, WinSCP, FileZilla, GitHub, etc<br>
+Languages and Systems<br>
+English, HTML, PHP, MySQL, Linux, Windows, MacOS, Mobiles , etc<br>
+APIs<br>
+Calendar, Weather<br>
+PHPMailer<br>
+Supported Browsers<br>
+Chrome, Firefox, Opera, Safari, Microsoft Edge, Internet Explorer<br>
+Frameworks<br>
+HTML, PHP, CSS<br>
+
+DB Organization:<br>
+The database get divide into multiple tables. With the UserID from the User table you can get access to the User_Info, Event, User_Comments, and Security_Answers tables. In addition, from Security_Answers you get data from Security_Questions using the QuestionID and both the Event and User_Comment tables get connected with not only UserID but EventID as well. In other words, as long as you have the UserID, you can get information in all the tables that belong to a specific person. <br>
+List of DB Tables:<br><br>
+User: UserID, UserName,Password, Salt, Role, Status<br>
+User_Info: UserID, FirstName, LastName, NickName, DoB, Gender, Email, Telephone, Major<br><br>
+Event: EventID, UserID, Location, Description, Date/Time, Media, Verify, Path. <br>
+User_Comments: C_ID, UserID, EventID, Comment.<br>
+Security_Answers: UserID, QuestionID, Answers<br>
+Security_Questions: QuestionID, Questions<br>
+
+Media Storage:<br>
+The images and video/audio will be kept in file system. The database only stores the path to the files (Event table).<br>
+Search/filter architecture and implementation:<br>
+The execution of a “select” statement to the database will be used for searching, where the condition for the statement can be any of the element in a collection of  fields used for searching.<br>
+Term will be used for searching:<br>
+Username: a String stored in User table. Once the Username is found, the system will get the UserID and find corresponding Nickname and display the Nickname back to UI.<br>
+Nickname: a String stored in User_Info table. Once the Nickname is found, the system will return and display the Nickname back to UI.
+First Name/Last Name: two Strings stored in User_Info table. Once either one or both First Name Last Name is found, the system will return and display the corresponding Nickname back to UI.<br>
+Event Description (partial also works): a String stored in Event table. Once found, the system will return everything about that event back and display in UI.<br>
+Location: a String stored in Event table. Once found, the system will return every event in that location back and display in UI.
+Term will be filtered/sorted:<br>
+Location: a String stored in Event table. By applying this filter, the system will execute a search on the selected location.<br>
+Date/Time: a DateTime field in Event table, entered by the system when an event is posted, and will be sorted from newest to oldest.<br>
+Verify: a Boolean field in in Event table. By applying this filter, the system will show only events that were verified by Power User.<br>
+Your own APIs:<br>
+We will not create any API of our own.<br>
+Describe any significant non-trivial algorithm or process:<br>
+The order of the event post will be shown in order (newest first):  have to read the event bottom up according to datetime. Before output each post, the Event table (store all of the event post from user) will get descending (DESC) sort by the Date/Time before output to the Home Screen.<br>
+Verifying is the process where power user verify whether a post is legit. In Event table there’s a verify field which all post will be masked as false at first. Then Power User can check the event physically and indicate whether the post is legit. From there the Power User can decide whether the post can stay in the system by click on verified or delete. <br>
+
+## 9. High-Level UML Diagrams
+
+Diagrams uploaded to google drive
 
 
-## 8. High-Level UML Diagrams
-
-
-
-## 9. Identify Key Risks and Actions
+## 10. Identify Key Risks and Actions
 
 
