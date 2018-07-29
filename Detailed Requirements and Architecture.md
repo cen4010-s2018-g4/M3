@@ -107,8 +107,6 @@ User Stories:
 17. Calendar: A user should be able to check for the date in the calendar section. [3] 
 
 
-
-
 ## 6. List of Non-Functional Requirements
 
 1. The website shall run on at least 3 major web browsers.
@@ -133,7 +131,7 @@ User Stories:
 
 Note to proofreader: I added a few number quantity to our previous requirements and added #13-16. 
 
-## 7. High-Level System Architecture and Database Organization
+## 7. High-Level System Architecture 
 
 Software products and Tools: Brackets, Notepad++, Putty, WinSCP, FileZilla, GitHub, etc <br>
 Languages and Systems: English, HTML, PHP, MySQL, Linux, Windows, MacOS, Mobiles , etc<br>
@@ -193,4 +191,8 @@ Diagrams uploaded to google drive
 
 ## 10. Identify Key Risks and Actions
 
-
+Skills risks: Some of the development team members lack the database skills<br>
+Schedule risks: Some of the team members are too busy, but other members are trying to make up for that. We’re trying our best to make it in time.<br>
+Technical risks: None<br>
+Teamwork risks: Lack of communication. Each member will have to review the idea for the project and communicate with each other more. Especially ask questions on things that is unclear for verification and agreement instead of just assuming and spend more time to fix later on.<br>
+Legal/content risks: None<br>
